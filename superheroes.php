@@ -1,5 +1,11 @@
 <?php
 
+// Allow all origins (you can restrict this to specific domains for security)
+header("Access-Control-Allow-Origin: *"); // Allow all domains (you can specify a domain if necessary)
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS"); // Allow GET, POST, and OPTIONS methods
+header("Access-Control-Allow-Headers: Content-Type"); // Allow certain headers
+
+
 $superheroes = [
   [
       "id" => 1,
@@ -65,8 +71,32 @@ $superheroes = [
 
 ?>
 
-<ul>
-<?php foreach ($superheroes as $superhero): ?>
-  <li><?= $superhero['alias']; ?></li>
-<?php endforeach; ?>
-</ul>
+<?php
+$query = isset($_GET['query']) ? trim($_GET['query']) : '';
+
+if ($query === '') {
+    // If no query, show the full list
+    echo "<ul>";
+    foreach ($superheroes as $superhero) {
+        echo "<li>{$superhero['alias']}</li>";
+    }
+    echo "</ul>";
+} else {
+    // Filter results
+    $filtered = array_filter($superheroes, function ($superhero) use ($query) {
+        return stripos($superhero['name'], $query) !== false || stripos($superhero['alias'], $query) !== false;
+    });
+
+    if (empty($filtered)) {
+        // No results found
+        echo "<p style='color: red;'> SUPERHERO NOT FOUND</p>";
+    } 
+    elseif (count($filtered) === 1) {
+        // Single result found
+        $superhero = reset($filtered);
+        echo "<h3>{$superhero['alias']}</h3>";
+        echo "<h4>A.K.A {$superhero['name']}</h4>";
+        echo "<p> {$superhero['biography']}</p>";
+    } 
+}
+?>
