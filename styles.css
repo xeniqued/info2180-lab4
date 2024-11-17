@@ -1,0 +1,152 @@
+.flex-container {
+    display: grid;
+    grid-template-rows: auto 1fr; /* Header and body rows */
+    height: 100vh;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Style for the header */
+#header {
+    text-align: center;
+    background-color: #6ea2c0 ;
+}
+
+/* Style for the header text */
+
+h1{
+    background-color: #6ea2c0;
+    color: #FFFFFF;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 45px;
+    padding: 40px;
+    text-align: center;
+
+}
+
+/* Style for text above the searchbar */
+
+p{
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    text-align: left;
+    margin-left: 10%;
+
+}
+
+/* Style for the body */
+#body {
+    padding: 5px;
+    background-color: #e6e6e6;
+}
+
+/* Style for the search container */
+
+.search-container {
+    display: flex;
+    justify-content: center;   
+    align-items: center;                         
+    flex-direction: row-reverse; 
+    margin-bottom: 20px;        
+}
+
+/* Style for the search input */
+#search {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    margin-left: 10%;
+    width: 95%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Style for the search button */
+
+#search-button {
+    padding: 10px 10px;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #dd0101;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    margin-right: 10%;
+}
+
+/* Style for the result tag */
+#result_tag{
+    font-size: 20px;
+    color: #1c437a;
+    font-family: 'Verdana Narrow', sans-serif;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 10%;
+
+}
+
+/* Style for superhero list */
+
+#superhero-list, #result {
+    font-size: 16px;
+    text-align: left;
+    margin-left: 10%;
+
+
+}
+
+/* Style for results div */
+
+#result{
+    padding-top:2px;
+    font-family:  Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+/* Style for headings in the result */
+#result h3 {
+    margin: 3px 0; 
+    font-size: 24px; 
+    text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #000000; 
+}
+
+#result h4 {
+    margin-top: 0px;
+    font-size: 16px; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+    color: #000000; 
+}
+
+/* Style for paragraphs in the result */
+#result p {
+    margin: 10px 0; 
+    font-size: 18px; 
+    font-family: 'Times New Roman', Times, serif;
+    color:#000000; 
+}
+
+/* Style for unordered lists in the result */
+#result ul {
+    margin: 10px 0;
+}
+
+#result li {
+    margin: 5px 0; /* Space between list items */
+    font-size: 16px; 
+    color: #000000; 
+}
+
+/* Style for the "Superhero not found" message */
+#result p[style="color: red;"] {
+    font-weight: bold; 
+    color:red;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
